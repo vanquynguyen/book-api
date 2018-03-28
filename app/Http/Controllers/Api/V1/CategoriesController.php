@@ -49,7 +49,16 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $categories = $request->all();
+            $categories = $this->categoryRepository->create($categories);
+
+            return response()->json($categories);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 
     /**
@@ -60,7 +69,9 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = $this->categoryRepository->show($id);
+
+        return response()->json($categories);
     }
 
     /**
@@ -83,7 +94,16 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $categories = $request->all();
+            $categories = $this->categoryRepository->update($categories, $id);
+
+            return response()->json($categories);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 
     /**
@@ -94,6 +114,15 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $categories = $this->categoryRepository->destroy($id);
+            $categories = $this->categoryRepository->getAllCategory(['*'], 5);
+  
+            return response()->json($categories);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 }

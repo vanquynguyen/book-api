@@ -20,6 +20,8 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('author');
+            $table->string('price');
+            $table->integer('amount');
             $table->integer('status');
             $table->float('rate_average')->unsigned()->nullable();
             $table->integer('rate_count')->unsigned()->nullable();

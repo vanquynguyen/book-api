@@ -7,11 +7,7 @@ class CategoryRepository extends Repository implements CategoryRepositoryInterfa
     /**
      * @return mixed
      */
-    public function model()
-    {
-        return Category::class;
-    }
-   
+
     public function getAllCategory($select = ['*'], $paginate = 5)
     {
         $categories = Category::select($select)->orderBy('created_at', 'desc')
@@ -20,4 +16,31 @@ class CategoryRepository extends Repository implements CategoryRepositoryInterfa
         return $categories;
     }
 
+    public function create($data)
+    {
+        $categories = Category::create($data);
+
+        return $categories;
+    }
+
+    public function show($id)
+    {
+        $categories = Category::findOrFail($id);
+
+        return $categories;
+    }
+
+    public function update($data, $id)
+    {
+        $categories = Category::find($id)->update($data);
+        
+        return $categories;
+    }
+
+    public function destroy($id)
+    {
+        $categories = Category::find($id)->delete();
+        
+        return $categories;
+    }
 }

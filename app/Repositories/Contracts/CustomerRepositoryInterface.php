@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Contracts;
-interface CategoryRepositoryInterface extends RepositoryInterface
+interface CustomerRepositoryInterface extends RepositoryInterface
 {
-    public function getAllCategory($select = ['*'], $paginate = 5);
+    public function getAllCustomer($select = ['*'], $paginate = 5);
     public function create($data);
     public function show($id);
     public function update($data, $id);
