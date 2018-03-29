@@ -27,7 +27,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = $this->categoryRepository->getAllCategory(['*'], 5);
+        // $categories = $this->categoryRepository->getAllCategory(['*'], 5);
+        $categories = Category::all();
 
         return response()->json($categories);
     }
@@ -131,13 +132,6 @@ class CategoriesController extends Controller
         $keywork = Input::get('keywork');
         $categories = $this->categoryRepository->search($keywork);
         
-        return response()->json($categories);
-    }
-
-    public function filterList(Request $request) {
-        $value = Input::get('value');
-        $categories = $this->categoryRepository->getAllCategory(['*'], $value);
-
         return response()->json($categories);
     }
    
