@@ -8,7 +8,7 @@ class CategoryRepository extends Repository implements CategoryRepositoryInterfa
      * @return mixed
      */
 
-    public function getAllCategory($select = ['*'], $paginate = 5)
+    public function getAllCategory($select = ['*'], $paginate = [])
     {
         $categories = Category::select($select)->orderBy('created_at', 'desc')
             ->paginate($paginate);
@@ -41,6 +41,13 @@ class CategoryRepository extends Repository implements CategoryRepositoryInterfa
     {
         $categories = Category::find($id)->delete();
         
+        return $categories;
+    }
+
+    public function search($keywork)
+    {
+        $categories = Category::Where('name', 'like', '%'. $keywork .'%')->get();
+
         return $categories;
     }
 }

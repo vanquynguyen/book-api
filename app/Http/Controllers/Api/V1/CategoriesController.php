@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\Contracts\CategoryRepositoryInterface as CategoryRepository;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class CategoriesController extends Controller
 {
@@ -27,7 +28,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = $this->categoryRepository->getAllCategory(['*'], 5);
-  
+
         return response()->json($categories);
     }
 
@@ -125,4 +126,19 @@ class CategoriesController extends Controller
             return response()->json($response);
         }
     }
+
+    public function search(Request $request) {
+        $keywork = Input::get('keywork');
+        $categories = $this->categoryRepository->search($keywork);
+        
+        return response()->json($categories);
+    }
+
+    public function filterList(Request $request) {
+        $value = Input::get('value');
+        $categories = $this->categoryRepository->getAllCategory(['*'], $value);
+
+        return response()->json($categories);
+    }
+   
 }
