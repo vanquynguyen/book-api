@@ -20,4 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::resource('categories', 'CategoriesController', ['except' => ['create', 'edit']]);
     Route::get('category/search', 'CategoriesController@search');
+    Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);
+    Route::get('user/approve/{id}', 'UserController@approve');
+    Route::get('user/search', 'UserController@search');
+    Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
+    Route::get('book/approve/{id}', 'BookController@approve');
+    Route::get('book/search', 'BookController@search');
 });

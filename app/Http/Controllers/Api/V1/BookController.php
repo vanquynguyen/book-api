@@ -2,11 +2,25 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\BookRepositoryInterface as BookRepository;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use App\Helpers\helper;
 
 class BookController extends Controller
 {
+    private $userRepository;
+
+    public function __construct(
+        BookRepository $bookRepository
+    )
+    {
+        $this->bookRepository = $bookRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = $this->bookRepository->getAll();
+
+        return response()->json($books);
     }
 
     /**
@@ -46,7 +62,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $books = $this->bookRepository->show($id);
+
+        return response()->json($books);
     }
 
     /**
@@ -69,7 +87,16 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $books = $request->all();
+            $books = $this->bookRepository->update($books, $id);
+
+            return response()->json($books);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 
     /**
@@ -80,6 +107,33 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $books = $this->bookRepository->destroy($id);
+  
+            return response()->json($books);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
+    }
+
+    public function approve($id)
+    {
+        $books = [
+            'status' => config('settings.status.approved')
+        ];
+
+        $books = $this->bookRepository->update($books, $id);
+        $books = $this->bookRepository->getAll();
+
+        return response()->json($books);
+    }
+
+    public function search(Request $request) {
+        $keywork = Input::get('keywork');
+        $books = $this->bookRepository->search($keywork);
+
+        return response()->json($books);
     }
 }

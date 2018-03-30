@@ -2,11 +2,25 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\UserRepositoryInterface as UserRepository;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use App\Helpers\helper;
 
 class UserController extends Controller
 {
+    private $userRepository;
+
+    public function __construct(
+        UserRepository $userRepository
+    )
+    {
+        $this->userRepository = $userRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = $this->userRepository->getAll();
+
+        return response()->json($users);
     }
 
     /**
@@ -35,7 +51,35 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = Validator::make(Request::all(),[ 
+            'email' => 'required|unique:email',
+        ]);
+
+        if($validation->fails()){
+
+
+        } else {
+            try {
+                $users = [
+                    'full_name' => $request->full_name,
+                    // 'avatar' => $filename,
+                    'email' => $request->email,
+                    'password' => $request->password,
+                    'address' => $request->address,
+                    'gender' => $request->gender,
+                    'level' => config('settings.level.user'),
+                    'status' => config('settings.status.inprogress'),
+                ];
+
+                $users = $this->userRepository->create($users);
+
+                return response()->json($users);
+            } catch (Exception $e) {
+                $response['error'] = true;
+
+                return response()->json($response);
+            }
+        }
     }
 
     /**
@@ -46,7 +90,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = $this->userRepository->show($id);
+
+        return response()->json($users);
     }
 
     /**
@@ -69,7 +115,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $users = $request->all();
+            $users = $this->userRepository->update($users, $id);
+
+            return response()->json($users);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 
     /**
@@ -80,6 +135,33 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $users = $this->userRepository->destroy($id);
+  
+            return response()->json($users);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
+    }
+
+    public function approve($id)
+    {
+        $users = [
+            'status' => config('settings.status.approved')
+        ];
+
+        $users = $this->userRepository->update($users, $id);
+        $users = $this->userRepository->getAll();
+
+        return response()->json($users);
+    }
+
+    public function search(Request $request) {
+        $keywork = Input::get('keywork');
+        $users = $this->userRepository->search($keywork);
+
+        return response()->json($users);
     }
 }

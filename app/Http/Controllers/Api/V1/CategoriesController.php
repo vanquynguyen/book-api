@@ -118,7 +118,7 @@ class CategoriesController extends Controller
     {
         try {
             $categories = $this->categoryRepository->destroy($id);
-            $categories = $this->categoryRepository->getAllCategory(['*'], 5);
+            // $categories = $this->categoryRepository->getAllCategory(['*'], 5);
   
             return response()->json($categories);
         } catch (Exception $e) {

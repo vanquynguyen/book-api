@@ -6,6 +6,10 @@ use App;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
 use App\Repositories\Eloquent\CategoryRepository;
+use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\Contracts\BookRepositoryInterface;
+use App\Repositories\Eloquent\BookRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -27,5 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         App::bind(CategoryRepositoryInterface::class, CategoryRepository::class);
+        App::bind(UserRepositoryInterface::class, UserRepository::class);
+        App::bind(BookRepositoryInterface::class, BookRepository::class);
     }
 }

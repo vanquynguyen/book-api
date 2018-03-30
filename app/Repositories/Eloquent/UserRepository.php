@@ -7,8 +7,14 @@ class UserRepository extends Repository implements UserRepositoryInterface
     /**
      * @return mixed
      */
+    public function getAll($select = ['*'])
+    {
+        $users = User::select($select)->orderBy('created_at', 'desc')->get();
+       
+        return $users;
+    }
 
-    public function getAllUser($select = ['*'], $paginate = 5)
+    public function getAllUser($select = ['*'], $paginate = [])
     {
         $users = User::select($select)->orderBy('created_at', 'desc')
             ->paginate($paginate);
@@ -41,6 +47,20 @@ class UserRepository extends Repository implements UserRepositoryInterface
     {
         $users = User::find($id)->delete();
         
+        return $users;
+    }
+
+    public function approve($data, $id)
+    {
+        $users = User::find($id)->update($data);
+
+        return $users;
+    }
+
+    public function search($keywork)
+    {
+        $users = User::Where('full_name', 'like', '%'. $keywork .'%')->get();
+
         return $users;
     }
 }

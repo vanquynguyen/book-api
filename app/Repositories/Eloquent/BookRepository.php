@@ -8,6 +8,13 @@ class BookRepository extends Repository implements BookRepositoryInterface
      * @return mixed
      */
 
+    public function getAll($select = ['*'])
+    {
+        $books = Book::select($select)->orderBy('created_at', 'desc')->get();
+       
+        return $books;
+    }
+
     public function getAllBook($select = ['*'], $paginate = 5)
     {
         $books = Book::select($select)->orderBy('created_at', 'desc')
@@ -37,10 +44,24 @@ class BookRepository extends Repository implements BookRepositoryInterface
         return $books;
     }
 
+    public function approve($data, $id)
+    {
+        $books = Book::find($id)->update($data);
+
+        return $books;
+    }
+
     public function destroy($id)
     {
         $books = Book::find($id)->delete();
         
+        return $books;
+    }
+
+    public function search($keywork)
+    {
+        $books = Book::Where('title', 'like', '%'. $keywork .'%')->get();
+
         return $books;
     }
 }
