@@ -8,6 +8,13 @@ class CategoryRepository extends Repository implements CategoryRepositoryInterfa
      * @return mixed
      */
 
+    public function getAll($select = ['*'])
+    {
+        $categories = Category::select($select)->orderBy('created_at', 'desc')->get();
+       
+        return $categories;
+    }
+    
     public function getAllCategory($select = ['*'], $paginate = [])
     {
         $categories = Category::select($select)->orderBy('created_at', 'desc')

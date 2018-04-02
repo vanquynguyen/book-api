@@ -9,6 +9,7 @@ use App\Repositories\Contracts\UserRepositoryInterface as UserRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use App\Helpers\helper;
+use Validator;
 
 class UserController extends Controller
 {
@@ -51,18 +52,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = Validator::make(Request::all(),[ 
-            'email' => 'required|unique:email',
+        $validation = Validator::make($request->all(),[ 
+            'email' => 'required|email|unique:users',
         ]);
-
+        
         if($validation->fails()){
-
-
-        } else {
+            $response['status'] = $validation->errors();
+            $response = [
+                'status' => 403, 
+                'success'=>false
+            ];
+            return response()->json($response['status']);
+           
+        } 
+        else {
             try {
+                $filename = helper::upload($request->file('avatar'), config('settings.defaultPath'));
                 $users = [
                     'full_name' => $request->full_name,
-                    // 'avatar' => $filename,
+                    'avatar' => $filename,
                     'email' => $request->email,
                     'password' => $request->password,
                     'address' => $request->address,

@@ -27,8 +27,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        // $categories = $this->categoryRepository->getAllCategory(['*'], 5);
-        $categories = Category::all();
+        $categories = $this->categoryRepository->getAll(['*']);
 
         return response()->json($categories);
     }
@@ -99,6 +98,7 @@ class CategoriesController extends Controller
         try {
             $categories = $request->all();
             $categories = $this->categoryRepository->update($categories, $id);
+            $categories = $this->categoryRepository->getAll(['*']);
 
             return response()->json($categories);
         } catch (Exception $e) {
@@ -118,7 +118,6 @@ class CategoriesController extends Controller
     {
         try {
             $categories = $this->categoryRepository->destroy($id);
-            // $categories = $this->categoryRepository->getAllCategory(['*'], 5);
   
             return response()->json($categories);
         } catch (Exception $e) {
