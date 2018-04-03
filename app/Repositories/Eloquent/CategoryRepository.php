@@ -39,7 +39,7 @@ class CategoryRepository extends Repository implements CategoryRepositoryInterfa
 
     public function update($data, $id)
     {
-        $categories = Category::find($id)->update($data);
+        $categories = Category::findOrFail($id)->update($data);
         
         return $categories;
     }

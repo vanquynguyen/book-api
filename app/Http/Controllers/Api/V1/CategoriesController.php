@@ -98,7 +98,6 @@ class CategoriesController extends Controller
         try {
             $categories = $request->all();
             $categories = $this->categoryRepository->update($categories, $id);
-            $categories = $this->categoryRepository->getAll(['*']);
 
             return response()->json($categories);
         } catch (Exception $e) {
