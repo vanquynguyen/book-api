@@ -29,6 +29,10 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'],
 });
 
 Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
-    Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
-    Route::get('book/search', 'BookController@search');
+    Route::post('register', 'LoginController@register');
+    Route::post('login', 'LoginController@login');
+    Route::get('/', 'LoginController@session');
+
+    // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
+    // Route::get('book/search', 'BookController@search');
 });
