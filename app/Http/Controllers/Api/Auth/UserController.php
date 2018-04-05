@@ -52,7 +52,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = Validator::make($request->all(),[ 
+             $validation = Validator::make($request->all(),[ 
             'email' => 'required|email|unique:users',
         ]);
         
@@ -64,8 +64,7 @@ class UserController extends Controller
             ];
             return response()->json($response['status']);
            
-        } 
-        else {
+        }  else {
             try {
                 $filename = helper::upload($request->file('avatar'), config('settings.defaultPath'));
                 $users = [
