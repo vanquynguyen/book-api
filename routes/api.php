@@ -28,11 +28,15 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'],
     Route::get('book/search', 'BookController@search');
 });
 
-Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
+Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
     Route::post('register', 'LoginController@register');
     Route::post('login', 'LoginController@login');
-    Route::get('/', 'LoginController@session');
+    Route::post('logout', 'LoginController@logout');
 
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
     // Route::get('book/search', 'BookController@search');
+});
+
+Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth','middleware' => 'jwt.auth', 'as' => 'api.'], function () {
+    Route::get('user', 'LoginController@getAuthUser');
 });
