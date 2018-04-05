@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,11 +10,9 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'], function () {
     Route::resource('categories', 'CategoriesController', ['except' => ['create', 'edit']]);
     Route::get('category/search', 'CategoriesController@search');
@@ -27,17 +23,15 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'],
     Route::get('book/approve/{id}', 'BookController@approve');
     Route::get('book/search', 'BookController@search');
 });
-
 Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
     Route::resource('register', 'UserController', ['except' => ['create', 'edit']]);
-
+    Route::resource('categories', 'CategoriesController', ['only' => ['index']]);
     Route::post('login', 'LoginController@login');
     Route::get('logout', 'LoginController@logout');
-
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
     // Route::get('book/search', 'BookController@search');
 });
-
 Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'middleware' => 'jwt.auth', 'as' => 'api.'], function () {
     Route::get('user', 'LoginController@getAuthUser');
+   
 });

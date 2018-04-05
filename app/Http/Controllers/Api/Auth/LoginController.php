@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Api\Auth;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -12,16 +10,13 @@ use App\Helpers\helper;
 use Illuminate\Support\Facades\Input;
 use Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
-
 class LoginController extends Controller
 {
     private $jwtAuth;
-
     public function __construct(JWTAuth $jwtAuth)
     {
         $this->jwtAuth = $jwtAuth;
     }
-
     public function login(Request $request){
         $credentials = $request->only('email', 'password');
         $token = null;
@@ -40,19 +35,16 @@ class LoginController extends Controller
         }
         // $user = User::where('email', $request->email)->first();
         $user = JWTAuth::toUser($token);
-
         return response()->json([
             'response' => 'success',
             'user' => $user,
             'token' => $token,
         ]);   
     }
-
     public function getAuthUser(Request $request)
     {
         try {
             $user = JWTAuth::toUser($request->token);  
-
             return response()->json(['result' => $user]);
         } catch (JWTAuthException $e) {
             return response()->json([
@@ -62,10 +54,18 @@ class LoginController extends Controller
         }
     }
     
-    // public function logout()
-    // 
-    //     $token = $this->jwtAuth->getToken();
-    //     $this->jwtAuth->invalidate($token);
-    //     return response()->json(['logout']);
-    // }
+    public function logout(Request $request)
+    {   
+        try {
+            $token = Input::get('token');
+            $user = JWTAuth::invalidate($request->token);  
+            
+            return response()->json(['logout']);
+        } catch (JWTAuthException $e) {
+            return response()->json([
+                'response' => 'error',
+                'message' => 'missing_token',
+            ]);
+        }
+    }
 }
