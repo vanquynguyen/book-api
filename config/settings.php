@@ -4,6 +4,7 @@ return [
         'inprogress' => 0,
         'approved' => 1,
     ],
+    'bookPath' => 'images/books/',
     'defaultPath' => 'images/',
     'defaultAvatar' => 'avatar.png',
     'level' => [

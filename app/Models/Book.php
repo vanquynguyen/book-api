@@ -10,6 +10,7 @@ class Book extends Model
         'user_id',
         'category_id',
         'title',
+        'image',
         'description',
         'author',
         'price',

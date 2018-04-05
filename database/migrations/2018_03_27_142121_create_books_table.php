@@ -18,9 +18,10 @@ class CreateBooksTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->string('title');
+            $table->string('image');
             $table->string('description');
             $table->string('author');
-            $table->string('price');
+            $table->integer('price');
             $table->integer('amount');
             $table->integer('status');
             $table->float('rate_average')->unsigned()->nullable();

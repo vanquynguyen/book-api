@@ -26,6 +26,9 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'],
 Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
     Route::resource('register', 'UserController', ['except' => ['create', 'edit']]);
     Route::resource('categories', 'CategoriesController', ['only' => ['index']]);
+    Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
+    Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);
+    Route::get('user/search', 'UserController@search');
     Route::post('login', 'LoginController@login');
     Route::get('logout', 'LoginController@logout');
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);

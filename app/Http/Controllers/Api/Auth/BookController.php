@@ -51,7 +51,28 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $filename = helper::upload($request->file('image'), config('settings.bookPath'));
+            $books = [
+                'user_id' => $request->user_id,
+                'category_id' => $request->category_id,
+                'title' => $request->title,
+                'image' => $filename,
+                'description' => $request->description,
+                'author' => $request->author,
+                'price' => $request->price,
+                'amount' => $request->amount,
+                'status' => config('settings.status.inprogress'),
+            ];
+
+            $books = $this->bookRepository->create($books);
+
+            return response()->json($books);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 
     /**
