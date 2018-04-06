@@ -27,6 +27,7 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::resource('register', 'UserController', ['except' => ['create', 'edit']]);
     Route::resource('categories', 'CategoriesController', ['only' => ['index']]);
     Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
+    Route::get('get-books', 'BookController@getBook');
     Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);
     Route::get('user/search', 'UserController@search');
     Route::post('login', 'LoginController@login');
@@ -34,6 +35,11 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
     // Route::get('book/search', 'BookController@search');
 });
+
+Route::group(['prefix' => '/auth','middleware' => 'sessions', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
+    Route::resource('carts', 'CartController', ['except' => ['create', 'edit']]);
+});
+
 Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'middleware' => 'jwt.auth', 'as' => 'api.'], function () {
     Route::get('user', 'LoginController@getAuthUser');
    

@@ -139,22 +139,23 @@ class BookController extends Controller
         }
     }
 
-    public function approve($id)
-    {
-        $books = [
-            'status' => config('settings.status.approved')
-        ];
-
-        $books = $this->bookRepository->update($books, $id);
-        $books = $this->bookRepository->getAll();
-
-        return response()->json($books);
-    }
-
     public function search(Request $request) {
         $keywork = Input::get('keywork');
         $books = $this->bookRepository->search($keywork);
 
         return response()->json($books);
+    }
+
+    public function getBook()
+    {
+        $newBooks = $this->bookRepository->getNewBook();
+
+        return response()->json($newBooks);
+
+        // return response()->json([
+        //     'newBooks' => $newBooks,
+        //     // 'user' => $user,
+        //     // 'token' => $token,
+        // ]); 
     }
 }

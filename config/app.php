@@ -163,6 +163,8 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+
 
     ],
 
@@ -214,6 +216,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Helpers' => App\Helpers\Helper::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
     ],
 

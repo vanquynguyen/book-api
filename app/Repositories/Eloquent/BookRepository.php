@@ -23,6 +23,13 @@ class BookRepository extends Repository implements BookRepositoryInterface
         return $books;
     }
 
+    public function getNewBook()
+    {
+        $books = Book::where('status', 1)->orderBy('created_at', 'desc')->take(3)->get();
+       
+        return $books;
+    }
+
     public function create($data)
     {
         $books = Book::create($data);
