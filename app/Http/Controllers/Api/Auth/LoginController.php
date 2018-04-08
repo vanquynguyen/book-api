@@ -10,6 +10,8 @@ use App\Helpers\helper;
 use Illuminate\Support\Facades\Input;
 use Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Models\Session;
+
 class LoginController extends Controller
 {
     private $jwtAuth;
@@ -33,8 +35,8 @@ class LoginController extends Controller
                 'message' => 'failed_to_create_token',
             ]);
         }
-        // $user = User::where('email', $request->email)->first();
         $user = JWTAuth::toUser($token);
+    
         return response()->json([
             'response' => 'success',
             'user' => $user,

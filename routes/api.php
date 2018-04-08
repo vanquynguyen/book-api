@@ -32,12 +32,12 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::get('user/search', 'UserController@search');
     Route::post('login', 'LoginController@login');
     Route::get('logout', 'LoginController@logout');
+    Route::resource('carts', 'CartController', ['except' => ['create', 'edit']]);
+    Route::get('cart/get-book-id', 'CartController@getBookId');
+    
+
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
     // Route::get('book/search', 'BookController@search');
-});
-
-Route::group(['prefix' => '/auth','middleware' => 'sessions', 'namespace' => 'Api\Auth', 'as' => 'api.'], function () {
-    Route::resource('carts', 'CartController', ['except' => ['create', 'edit']]);
 });
 
 Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'middleware' => 'jwt.auth', 'as' => 'api.'], function () {

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 use App\Models\Book;
-use Cart;
+use App\Models\Cart;
+use App\Models\Session;
 
 class CartController extends Controller
 {
@@ -14,11 +16,19 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $carts = Cart::content();
+        try {
+            $userId = Input::get('userId');
+            $carts = Cart::where('user_id', $userId)->OrderBy('created_at', 'desc')->get();
 
-        return response()->json($carts);
+            return response()->json($carts);
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
+
     }
 
     /**
@@ -39,18 +49,21 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $book = Book::find($request->id);
-        $cart = Cart::add([
-            'id' => $request->id, 
-            'name' => $book->title, 
-            'qty' => 1, 
-            'price' => 9.99, 
-            'options' => [
-                'image' => $book->image
-            ]
-        ]);
+        $book = Book::find($request->bookId);
+        $carts = [
+            'user_id' => $request->userId,
+            'book_id' => $request->bookId,
+            'title' => $book->title,
+            'image' => $book->image,
+            'price' => $book->price,
+            'amount' => 1,
+            'status' => 1
 
-        return response()->json($cart);
+        ];
+
+        $carts = Cart::create($carts);
+
+        return response()->json($carts);
     }
 
     /**
@@ -84,7 +97,17 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $carts = Cart::findOrFail($id);
+        // $carts->amount = $request->amount;
+        // $carts->price = $request->price;
+        $data = [
+            'amount' => $request->amount,
+            'price' => $request->price
+        ];
+
+        $carts = $carts->update($data);
+
+        return response()->json($carts);
     }
 
     /**
@@ -95,7 +118,17 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cart = Cart::find($id)->delete();
+
+        return response()->json($cart);
+    }
+
+    public function getBookId(Request $request)
+    {
+        $bookId = Input::get('bookId');
+        $bookId = Cart::where('book_id', $bookId)->get();
+
+        return $bookId;
     }
 }
 
