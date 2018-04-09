@@ -11,6 +11,7 @@ class Booking extends Model
         'book_id',
         'total_amount',
         'price',
+        'method',
         'status',
     ];
 

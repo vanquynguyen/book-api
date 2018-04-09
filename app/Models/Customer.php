@@ -8,6 +8,7 @@ class Customer extends Model
 {
     protected $fillable = [
         'booking_id', 
+        'email',
         'full_name', 
         'phone',
         'gender',

@@ -19,6 +19,7 @@ class CreateBookingsTable extends Migration
             $table->unsignedInteger('book_id');
             $table->integer('total_amount');
             $table->integer('price');
+            $table->smallInteger('method');
             $table->smallInteger('status');
             $table->timestamps();
         });
