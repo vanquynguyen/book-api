@@ -21,8 +21,10 @@ class CartController extends Controller
         try {
             $userId = Input::get('userId');
             $carts = Cart::where('user_id', $userId)->OrderBy('created_at', 'desc')->get();
-
-            return response()->json($carts);
+            $priceTotal = Cart::where('user_id', $userId)->sum('price');
+            return response()->json([
+                'carts' => $carts,
+            ]);
         } catch (Exception $e) {
             $response['error'] = true;
 
@@ -130,5 +132,6 @@ class CartController extends Controller
 
         return $bookId;
     }
+
 }
 

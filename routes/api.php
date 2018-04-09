@@ -34,7 +34,7 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::get('logout', 'LoginController@logout');
     Route::resource('carts', 'CartController', ['except' => ['create', 'edit']]);
     Route::get('cart/get-book-id', 'CartController@getBookId');
-    
+    Route::resource('orders', 'OrderController', ['except' => ['create', 'edit']]);
 
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
     // Route::get('book/search', 'BookController@search');

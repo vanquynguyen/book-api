@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Contracts;
-interface BookingRepositoryInterface extends RepositoryInterface
+interface OrderRepositoryInterface extends RepositoryInterface
 {
-    public function getAllBooking($select = ['*'], $paginate = 5);
+    public function getAllOrder($select = ['*'], $paginate = 5);
     public function create($data);
     public function show($id);
     public function update($data, $id);

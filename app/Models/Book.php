@@ -50,8 +50,8 @@ class Book extends Model
         return $this->hasMany(Media::class, 'book_id');
     }
 
-    public function bookings()
+    public function order_details()
     {
-        return $this->hasMany(Booking::class, 'book_id');
+        return $this->hasMany(OrderDetail::class, 'book_id');
     }
 }

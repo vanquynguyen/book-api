@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class OrderDetail extends Model
 {
     protected $fillable = [
-        'user_id',
+        'order_id',
         'book_id',
         'total_amount',
         'price',
@@ -15,18 +15,13 @@ class Booking extends Model
         'status',
     ];
 
-    public function user()
+    public function order()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Order::class, 'order_id');
     }
 
     public function book()
     {
         return $this->belongsTo(Book::class, 'book_id');
-    }
-
-    public function customer()
-    {
-        return $this->belongsTo(Customer::class, 'booking_id');
     }
 }
