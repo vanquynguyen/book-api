@@ -44,6 +44,7 @@ class ReviewController extends Controller
             $review = $review->fill($request->all());
             $review->save();
 
+            $response = true;
         } else {
             $response = false;
         }
