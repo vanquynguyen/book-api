@@ -9,6 +9,8 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Customer;
+use Stripe;
+use Mail;
 
 class OrderController extends Controller
 {
@@ -116,7 +118,39 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $stripe = Stripe::setApiKey("sk_test_t9fbK0JjHn8vnCIZZXRSPkxC");
+            $token = $stripe->tokens()->create([
+                'card' => [
+                    'number' => "4242424242424242",
+                    'exp_month' => 4,
+                    'exp_year' => 2019,
+                    'cvc' => "314",
+                ],
+            ]);
+            if (!isset($token['id'])) {
+                return back();
+            }
+            $order = Order::find($id);
+          
+            $charge = $stripe->charges()->create([
+                'card' => $token['id'],
+                'currency' => 'usd',
+                'amount' => $order->total_price,
+                'description' => 'success',
+            ]);
+
+            $order->status = 1;
+            $order = $order->save();
+            $response = 'success';
+
+            return response()->json($response);
+            // Mail::to($request->email)->send(new MailBooking($booking));
+        } catch (Exception $e) {
+            $response['error'] = true;
+
+            return response()->json($response);
+        }
     }
 
     /**
