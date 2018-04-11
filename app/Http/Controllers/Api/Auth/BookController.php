@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\BookRepositoryInterface as BookRepository;
@@ -146,6 +147,13 @@ class BookController extends Controller
         return response()->json($books);
     }
 
+    public function getUserBook($id)
+    {
+        $books = Book::where('user_id', $id)->orderBy('created_at', 'desc')->get();
+
+        return response()->json($books);
+    }
+
     public function getBook()
     {
         $newBooks = $this->bookRepository->getNewBook();
@@ -158,4 +166,12 @@ class BookController extends Controller
         //     // 'token' => $token,
         // ]); 
     }
+
+    public function searchUserBook(Request $request, $id) {
+        $keywork = Input::get('keywork');
+        $books = Book::where('user_id', $id)->where('title', 'like', '%'. $keywork .'%')->get();
+
+        return response()->json($books);
+    }
+    
 }
