@@ -41,6 +41,9 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::get('filter-status', 'OrderController@filterStatus');
     Route::get('get-reviews', 'ReviewController@getBookReviews');
     Route::resource('reviews', 'ReviewController', ['only' => ['store', 'index']]);
+    Route::post('/user/follow', 'FollowController@follow');
+    Route::post('/user/unfollow', 'FollowController@unFollow');
+    Route::post('/user/check-follow', 'FollowController@checkFollow');
     // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
     // Route::get('book/search', 'BookController@search');
 });
