@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
@@ -162,6 +163,12 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function filterStatus(Request $request) {
+        $status = Input::get('status');
+        $orders = Order::where('status', $status)->get();
+        return response()->json($orders);
     }
 
     public function getHistoryOrder($id) {

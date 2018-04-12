@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 use App\Models\Review;
 
 class ReviewController extends Controller
@@ -15,9 +16,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::OrderBy('created_at', 'desc')->get();
-
-        return response()->json($reviews);
+       //
     }
 
     /**
@@ -60,7 +59,7 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
@@ -95,5 +94,13 @@ class ReviewController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getBookReviews(Request $request) 
+    {
+        $id = Input::get('id');
+        $reviews = Review::where('book_id', $id)->OrderBy('created_at', 'desc')->get();
+
+        return response()->json($reviews);
     }
 }
