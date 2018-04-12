@@ -13,10 +13,17 @@ class FollowController extends Controller
     public function follow(Request $request)
     {
         $follow = new Follow();
-        $follow->fill($request->all());
-        $follow->save();
+        $check = Follow::where('follower_id', $request->follower_id)->where('following_id', $request->following_id)->first();
+        if(!$check) {
+            $follow->fill($request->all());
+            $follow->save();
 
-        return response()->json($follow);
+            return response()->json($follow);
+        }
+
+        $response = 'followed';
+
+        return response()->json($response);
     }
 
     public function unFollow(Request $request)
@@ -37,5 +44,19 @@ class FollowController extends Controller
 
         return response()->json($check);
 
+    }
+
+    public function getFollowers($id)
+    {
+        $follower = Follow::where('follower_id', $id)->get();
+
+        return response()->json($follower);
+    }
+
+    public function getFollowings($id)
+    {
+        $following = Follow::where('following_id', $id)->get();
+
+        return response()->json($following);
     }
 }
