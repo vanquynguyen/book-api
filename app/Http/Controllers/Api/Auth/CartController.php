@@ -127,8 +127,7 @@ class CartController extends Controller
 
     public function getBookId(Request $request)
     {
-        $bookId = Input::get('bookId');
-        $bookId = Cart::where('book_id', $bookId)->get();
+        $bookId = Cart::where('book_id', $request->bookId)->where('user_id', $request->userId)->get();
 
         return $bookId;
     }

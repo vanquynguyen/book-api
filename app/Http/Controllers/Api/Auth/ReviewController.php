@@ -97,9 +97,10 @@ class ReviewController extends Controller
         //
     }
 
-    public function getBookReviews(Request $request) 
+    public function getBookReviews($id) 
     {
-        $reviews = Review::where('book_id', $request->id)->where('user_id', $request->userId)->with('user')->OrderBy('created_at', 'desc')->get();
+
+        $reviews = Review::where('book_id', $id)->with('user')->OrderBy('created_at', 'desc')->get();
 
         return response()->json($reviews);
     }

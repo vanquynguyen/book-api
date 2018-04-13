@@ -35,11 +35,11 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::post('login', 'LoginController@login');
     Route::get('logout', 'LoginController@logout');
     Route::resource('carts', 'CartController', ['except' => ['create', 'edit']]);
-    Route::get('cart/get-book-id', 'CartController@getBookId');
+    Route::post('cart/get-book-id', 'CartController@getBookId');
     Route::resource('orders', 'OrderController', ['except' => ['create', 'edit']]);
     Route::get('user/{id}/get-manage-order', 'OrderController@getHistoryOrder');
     Route::get('filter-status', 'OrderController@filterStatus');
-    Route::post('get-reviews', 'ReviewController@getBookReviews');
+    Route::post('book/{id}/get-reviews', 'ReviewController@getBookReviews');
     Route::resource('reviews', 'ReviewController', ['only' => ['store', 'index']]);
     Route::post('/user/follow', 'FollowController@follow');
     Route::post('/user/unfollow', 'FollowController@unFollow');
