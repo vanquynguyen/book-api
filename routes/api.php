@@ -39,7 +39,7 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::resource('orders', 'OrderController', ['except' => ['create', 'edit']]);
     Route::get('user/{id}/get-manage-order', 'OrderController@getHistoryOrder');
     Route::get('filter-status', 'OrderController@filterStatus');
-    Route::get('get-reviews', 'ReviewController@getBookReviews');
+    Route::post('get-reviews', 'ReviewController@getBookReviews');
     Route::resource('reviews', 'ReviewController', ['only' => ['store', 'index']]);
     Route::post('/user/follow', 'FollowController@follow');
     Route::post('/user/unfollow', 'FollowController@unFollow');

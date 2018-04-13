@@ -48,14 +48,14 @@ class FollowController extends Controller
 
     public function getFollowers($id)
     {
-        $follower = Follow::where('follower_id', $id)->get();
+        $follower = Follow::where('follower_id', $id)->with('followingUser')->get();
 
         return response()->json($follower);
     }
 
     public function getFollowings($id)
     {
-        $following = Follow::where('following_id', $id)->get();
+        $following = Follow::where('following_id', $id)->with('followerUser')->get();
 
         return response()->json($following);
     }

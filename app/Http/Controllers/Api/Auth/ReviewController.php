@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\Models\Review;
+use App\Models\User;
 
 class ReviewController extends Controller
 {
@@ -38,7 +39,7 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $review = new Review();
-        $userId = Review::where('user_id', $request->user_id)->first();
+        $userId = Review::where('user_id', $request->user_id)->where('book_id', $request->book_id)->first();
         if(!$userId) {
             $review = $review->fill($request->all());
             $review->save();
@@ -98,8 +99,7 @@ class ReviewController extends Controller
 
     public function getBookReviews(Request $request) 
     {
-        $id = Input::get('id');
-        $reviews = Review::where('book_id', $id)->OrderBy('created_at', 'desc')->get();
+        $reviews = Review::where('book_id', $request->id)->where('user_id', $request->userId)->with('user')->OrderBy('created_at', 'desc')->get();
 
         return response()->json($reviews);
     }
