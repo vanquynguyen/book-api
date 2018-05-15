@@ -10,6 +10,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Customer;
+use App\Models\Book;
 use Stripe;
 use Mail;
 
@@ -66,6 +67,12 @@ class OrderController extends Controller
                 $orderDetail->amount = $cart->amount;
                 $orderDetail->price = $cart->price;
                 $orderDetail->save();
+
+                $book = Book::find($cart->book_id);
+                $amountOld = $book->amount;
+                $amountNew = $amountOld - $cart->amount;
+                $book->amount = $amountNew;
+                $book = $book->save();
             }
 
             $customer = new Customer();
