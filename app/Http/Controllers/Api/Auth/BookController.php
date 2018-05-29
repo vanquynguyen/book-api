@@ -174,4 +174,10 @@ class BookController extends Controller
         return response()->json($books);
     }
     
+    public function bookFilter(Request $request) {
+        $books = Book::where('category_id', $request->category_id)->get();
+
+        return response()->json($books);
+    }
+    
 }
