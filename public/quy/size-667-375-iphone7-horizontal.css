@@ -1,0 +1,168 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Iphone 7 ngang(667 x 375)*/
+@media screen and (max-width: 667px){
+    .popup-inner {
+        max-width: 500px;
+        width: 80%;
+    }
+    #topBtn {
+        bottom: 20px;
+        right: 8px;
+        padding: 1px 4px 1px 4px;
+        font-size: 16px;
+    }
+    #topBtn:hover {
+        border-radius: 4px;
+    }
+    #trungquandev_wraper{
+        max-width: 95%;
+        height: 2000px;
+    }
+    #trungquandev_header{
+        height: 10%;
+    }
+    #trungquandev_content{
+        height: 87%;
+    }
+    #trungquandev_footer{
+        height: 3%;
+    }
+    .content-item-personal-contact{
+        height: 15%;
+    }
+    .content-item-skills{
+        height: 23%;
+    }
+    .content-item-projects{
+        height: 49%;
+    }
+    .content-item-hobbies-world-map{
+        height: 13%;
+    }
+    #trungquandev_table_header{
+        width: 60%;
+    }
+    #trungquandev_content .title a{
+        font-size: 25px;
+    }
+    #trungquandev_header .right p{
+        margin: 24px 0px 0px 35px;
+    }
+    #trungquandev_header .left hr{
+        display:none;
+    }
+    #table-personal{
+        width: 100%;
+        font-size: 13px;
+    }
+    #table-contact{
+        width: 100%;
+        font-size: 13px;
+    }
+    #table-contact tr td{
+        width: 85%;
+    }
+
+    #skills .caption-tech{
+        margin-left: 38%;
+        font-size: 16px;
+    }
+    #skills .sub-caption-tech{
+        margin-left: 6%;
+        font-size: 10px;
+    }
+    #skills .caption-other{
+        margin-left: 35%;
+        font-size: 16px;
+    }
+    #skills .sub-caption-other{
+        margin-left: 4%;
+        font-size: 10px;
+    }
+    #chart-skills{
+        width: 320px;
+        height: 300px;
+        margin-left: 0%;
+    }
+    #table-other-skills{
+        width: 96%;
+        margin-left: 6%;
+        font-size: 13px;
+    }
+    #table-other-skills tr td.left{
+        width: 87%;
+        margin: 5px 5px 4px 0px;
+        padding-left: 0px;
+    }
+    #table-other-skills tr td.right{
+        width: 5%;
+        margin: 5px 5px 4px 0px;
+        padding-left: 0px;
+    }
+    .arrow-other-skill{
+        font-size:15px;
+    }
+    .check-other-skill{
+        font-size:16px;
+    }
+    #projects .content .project-item{
+        width: 200px;
+        max-height:200px;
+        margin: 62px 0px 0px 56px;
+    }
+    #hobbies .content{
+        max-width: 90%;
+        max-height: 100%;
+        margin: 30px 0px 0px 50px;
+    }
+    #global-icon-hobbies
+    {
+        font-size: 13px;
+    }
+    #hobbies .caption-hobbies{
+        margin-left: -8%;
+        font-size: 15px;
+    }
+    #table-hobbies{
+        margin-left: 10%;
+    }
+    #table-hobbies tr td.first{
+        margin: 5px 10px 4px 0px;
+        padding: 7px 0px 0px 5px;
+    }
+    #table-hobbies tr td.second{
+        margin: 5px 10px 4px 0px;
+        padding: 7px 0px 0px 5px;
+    }
+    #table-hobbies tr td.third{
+        margin: 5px 10px 4px 0px;
+        padding: 7px 0px 0px 5px;
+    }
+    #chart-world-map{
+        width: 300px;
+        height: 190px;
+        /*border:1px solid black;*/
+    }
+    #trungquandev_footer .content-left{
+        width: 65%;
+    }
+    #trungquandev_footer .content-right{
+        width: 35%;
+    }
+    #table-footer tr td{
+        margin: 5px 10px 4px 0px;
+        padding: 15px 0px 0px 0px;
+    }
+    #footer-right-content{
+        margin-top: 7%;
+    }
+    #trungquandev_footer .content-right img{
+        width:16px;
+        height:16px;
+        margin-top: -4px;
+    }
+}
+

@@ -1,0 +1,211 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Small tablet dọc(600 x 800)*/
+@media screen and (max-width: 600px){
+    #topBtn {
+        bottom: 20px;
+        right: 14px;
+        padding: 1px 4px 1px 4px;
+        font-size: 16px;
+    }
+    #topBtn:hover {
+        border-radius: 4px;
+    }
+    #trungquandev_wraper{
+        max-width: 95%;
+        height: 2000px;
+    }
+    #trungquandev_table_header{
+        width: 60%;
+    }
+    #trungquandev_table_header caption{
+        font-size: 9px;
+    }
+    #trungquandev_table_header img{
+        margin: 5px 0px 5px 5px;
+    }
+    #trungquandev_header .left hr{
+        display: block;
+        margin: 100px 0px 0px 40px;
+    }
+    #trungquandev_header .right p{
+        margin: 27px 0px 0px 35px;
+    }
+    #trungquandev_header .right p a{
+        font-size: 22px;
+    }
+    #trungquandev_header .right p span{
+        font-size: 9px;
+    }
+    #trungquandev_content .title a{
+        font-size: 22px;
+    }
+    .content-item-personal-contact{
+        width: 100%;
+        height: 15%;
+    }
+    .content-item-skills{
+        width: 100%;
+        height: 24%;
+    }
+    .content-item-projects{
+        width: 100%;
+        height: 48%;
+    }
+    .content-item-hobbies-world-map{
+        width: 100%;
+        height: 12%;
+    }
+    #personal .content{
+        max-width: 90%;
+        height: 75%;
+        margin: 0 auto;
+        margin-top: 22px;
+    }
+    #contact .content{
+        max-width: 90%;
+        height: 75%;
+        margin: 0 auto;
+        margin-top: 18px;
+    }
+    #table-personal{
+        width: 95%;
+        font-size: 12px;
+    }
+    #table-personal tr td.left{
+        width: 30%;
+    }
+    #table-personal tr td.right{
+        width: 60%;
+    }
+    #table-contact{
+        width: 95%;
+        font-size: 12px;
+    }
+    #table-contact tr td{
+        width: 87%;
+    }
+    #skills .content{
+        margin-top: 2%;
+    }
+    #skills .caption-tech{
+        margin-left: 36%;
+        font-size: 16px;
+    }
+    #skills .sub-caption-tech{
+        margin-left: 6%;
+        font-size: 9px;
+    }
+    #skills .caption-other{
+        margin-left: 35%;
+        font-size: 16px;
+    }
+    #skills .sub-caption-other{
+        margin-left: 4%;
+        font-size: 9px;
+    }
+    #chart-skills{
+        width: 295px;
+        height: 300px;
+        margin-left: 0%;
+    }
+    #table-other-skills{
+        width: 94%;
+        margin-left: 8%;
+        font-size: 12px;
+    }
+    #table-other-skills tr td.left{
+        width: 86%;
+        margin: 5px 10px 4px 0px;
+        padding-left: 0px;
+    }
+    #table-other-skills tr td.right{
+        width: 4%;
+        margin: 5px 10px 4px 0px;
+        padding-left: 0px;
+    }
+    .arrow-other-skill{
+        font-size:14px;
+    }
+    .check-other-skill{
+        font-size:16px;
+    }
+    #projects .content{
+        margin-top:-27px;
+    }
+    #projects .content .project-item{
+        width: 200px;
+        max-height:200px;
+        margin: 54px 0px 0px 36px;
+    }
+    .projects-caption{
+        font-size: 14px;
+    }
+    #projects .projects-sub-caption{
+        font-size: 10px;
+    }
+    #hobbies .content{
+        max-width: 90%;
+        max-height: 100%;
+        margin: 30px 0px 0px 50px;
+    }
+    #global-icon-hobbies
+    {
+        font-size: 13px;
+    }
+    #hobbies .caption-hobbies{
+        margin-left: -5%;
+        font-size: 13px;
+    }
+    .hobbies-icon{
+        font-size: 15px;
+    }
+    #table-hobbies{
+        width: 85%;
+        margin-left: 10%;
+    }
+    #table-hobbies tr td.first{
+        margin: 5px 10px 4px 0px;
+        padding: 5px 0px 0px 10px;
+    }
+    #table-hobbies tr td.second{
+        margin: 5px 10px 4px 0px;
+        padding: 5px 0px 0px 10px;
+    }
+    #table-hobbies tr td.third{
+        margin: 5px 10px 4px 0px;
+        padding: 5px 0px 0px 10px;
+    }
+    #chart-world-map{
+        width: 260px;
+        height: 180px;
+    }
+    #trungquandev_footer .content-left{
+        width: 60%;
+    }
+    #trungquandev_footer .content-right{
+        width: 40%;
+    }
+    #table-footer{
+        font-size: 10px;
+    }
+    #table-footer tr td{
+        width: auto;
+        margin: 5px 10px 4px 0px;
+        padding: 15px 0px 0px 0px;
+        float: left;
+    }
+    #footer-right-content{
+        font-size: 10px;
+        margin-top: 9%;
+    }
+    #trungquandev_footer .content-right img{
+        width:15px;
+        height:15px;
+        margin-top: -3px;
+        border-radius: 45%;
+    }
+}
+

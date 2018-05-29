@@ -1,0 +1,136 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Iphone 4 ngang (480 x 320)*/
+@media screen and (max-width: 480px){
+    .popup-inner {
+        max-width: 500px;
+        width: 80%;
+    }
+    .popup-inner h1 {
+        font-size: 17px !important;
+    }
+    .popup-inner p {
+        font-size: 11px !important;
+    }
+    .popup-inner select {
+        font-size: 11px !important;
+    }
+    .btnq-save, .btnq-close {
+        width: 50px;
+        height: 25px;
+        font-size: 10px !important;
+    }
+    #trungquandev_wraper{
+        max-width: 95%;
+        height: 2100px;
+    }
+    #personal .content{
+        max-width: 100%;
+    }
+    #trungquandev_table_header img{
+        margin: 4px 0px 4px 4.5px;
+    }
+    #contact .content{
+        max-width: 100%;
+    }
+    #table-personal{
+        width: 99%;
+        font-size: 11px;
+    }
+    #table-personal tr td.left{
+        width: 30%;
+        padding-left: 5px;
+        margin: 5px 6px 4px 0px;
+    }
+    #table-personal tr td.right{
+        width: 60%;
+        padding-left: 5px;
+        margin: 5px 6px 4px 0px;
+    }
+    #table-contact{
+        width: 99%;
+        font-size: 11px;
+    }
+    #table-contact tr td{
+        width: 87%;
+        margin: 4px 0px 4px 15px;
+    }
+    #skills .content-tech-skills{
+        width: 100%;
+        height: 50%;
+        float: left;
+        position: relative;
+    }
+    #skills .content-other-skills{
+        width: 100%;
+        height: 50%;
+        margin-top: 70%;
+        float: left;
+    }
+    #skills .caption-tech{
+        margin-left: 38%;
+    }
+    #skills .sub-caption-tech{
+        margin-left: 17%;
+    }
+    #skills .sub-caption-other{
+        margin-left: 14%;
+    }
+    #chart-skills{
+        width: 400px;
+        height: 300px;
+        margin-left: 5%;
+    }
+    #table-other-skills{
+        font-size: 11px;
+    }
+    .arrow-other-skill{
+        font-size:13px;
+    }
+    .check-other-skill{
+        font-size:14px;
+    }
+    #projects .content .project-item{
+        width: 170px;
+        max-height:170px;
+        margin: 52px 0px 0px 20px;
+    }
+    #hobbies .content{
+        max-width: 95%;
+        margin: 30px 0px 0px 30px;
+    }
+    #global-icon-hobbies
+    {
+        font-size: 11px;
+    }
+    #hobbies .caption-hobbies{
+        font-size: 11px;
+    }
+    .hobbies-icon{
+        font-size: 14px;
+    }
+    #table-hobbies{
+        width: 85%;
+        margin-left: 10%;
+    }
+    #table-hobbies tr td.first{
+        margin: 5px 10px 4px 0px;
+        padding: 5px 0px 0px 5px;
+    }
+    #table-hobbies tr td.second{
+        margin: 5px 10px 4px 0px;
+        padding: 5px 0px 0px 5px;
+    }
+    #table-hobbies tr td.third{
+        margin: 5px 10px 4px 0px;
+        padding: 5px 0px 0px 5px;
+    }
+    #chart-world-map{
+        width: 220px;
+        height: 170px;
+        /*border:1px solid black;*/
+    }
+}
+

@@ -1,0 +1,251 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Iphone 7 Plus dọc(414 x 736)*/
+@media screen and (max-width: 414px){
+    .popup-inner {
+        max-width: 600px;
+        width: 90%;
+    }
+    .popup-inner h1 {
+        font-size: 20px !important;
+    }
+    .popup-inner p {
+        font-size: 12px !important;
+    }
+    .popup-inner select {
+        font-size: 12px !important;
+    }
+    .btnq-save, .btnq-close {
+        width: 60px;
+        height: 30px;
+        font-size: 12px !important;
+    }
+    #topBtn {
+        bottom: 25px;
+        right: 7px;
+        padding: 1px 3px 1px 3px;
+        font-size: 14px;
+    }
+    #topBtn:hover {
+        border-radius: 4px;
+    }
+    #trungquandev_wraper{
+        max-width: 95%;
+        height: 2400px;
+    }
+    #trungquandev_header{
+        max-width: 100%;
+        height: 7%;
+    }
+    #trungquandev_content{
+        max-width: 100%;
+        height: 89%;
+    }
+    #trungquandev_footer{
+        max-width: 100%;
+        height: 4%;
+    }
+    .content-item-personal-contact{
+        width: 100%;
+        height: 22%;
+    }
+    .content-item-skills{
+        width: 100%;
+        height: 32%;
+    }
+    .content-item-projects{
+        width: 100%;
+        height: 27%;
+    }
+    .content-item-hobbies-world-map{
+        width: 100%;
+        height: 19%;
+    }
+    #trungquandev_header .left{
+        width: 30.5%;
+        height: 100%;
+    }
+    #trungquandev_header .right{
+        width: 69%;
+        height: 100%;
+    }
+    #trungquandev_table_header{
+        width: 73%;
+    }
+    #trungquandev_table_header caption{
+        font-size: 9px;
+        font-style: normal;
+    }
+    #trungquandev_table_header img{
+        margin: 4px 0px 4px 4.5px;
+    }
+    #trungquandev_header .left hr{
+        margin: 75px 0px 0px 20px;
+        display: none;
+    }
+    #trungquandev_header .right p{
+        margin: 30px 0px 0px 32px;
+    }
+    #trungquandev_header .right p a{
+        font-size: 20px;
+    }
+    #trungquandev_header .right p span{
+        display: none;
+        /*margin-left: -19px;
+        font-size: 8px;*/
+    }
+    #trungquandev_content .title a{
+        margin: 0px 0px 0px 25px;
+        font-size: 19px;
+    }
+        #personal{
+            width: 100%;
+            height: 47%;
+            border-right: 0px solid #ecf0f1;
+        }
+        #contact{
+            width: 100%;
+            height: 53%;
+        }
+            #personal .content{
+                max-width: 80%;
+                height: 100%;
+                margin-top: 10px;
+            }
+            #contact .content{
+                max-width: 80%;
+                height: 100%;
+                margin-top: 10px;
+            }
+            #table-personal{
+                width: 100%;
+                font-size: 12px;
+                margin-left: 4%;
+
+            }
+            #table-contact{
+                width: 100%;
+                font-size: 12px;
+                margin-left: 2%;
+            }
+            #table-contact tr td{
+                width: 95%;
+                margin: 4px 0px 4px 0px;
+                padding: 3px 0px 0px 15px;
+            }
+
+            #skills .content{
+                max-width: 100%;
+                height: 100%;
+                margin-top: 3%;
+            }
+            #skills .content-tech-skills{
+                width: 100%;
+                height: 50%;
+                float: left;
+                position: relative;
+            }
+            #skills .content-other-skills{
+                width: 100%;
+                height: 50%;
+                margin-top: 80%;
+                float: left;
+            }
+                    #skills .caption-tech{
+                        margin-left: 36%;
+                        font-size: 16px;
+                    }
+                    #skills .sub-caption-tech{
+                        margin-left: 14%;
+                        font-size: 10px;
+                    }
+                    #skills .caption-other{
+                        margin-left: 39%;
+                        font-size: 16px;
+                    }
+                    #skills .sub-caption-other{
+                        margin-left: 10%;
+                        font-size: 10px;
+                    }
+                    #chart-skills{
+                        width: 365px;
+                        height: 300px;
+                        margin-left: 2%;
+                    }
+                #table-other-skills{
+                    width: 90%;
+                    margin-left: 8%;
+                    margin-top: -5%;
+                    font-size: 12px;
+                }
+                .arrow-other-skill{
+                    font-size:15px;
+                }
+                .check-other-skill{
+                    font-size:16px;
+                }
+    #projects .content{
+        margin-top:-27px;
+    }
+    #projects .content .project-item{
+        width: 120px;
+        max-height:120px;
+        margin: 52px 0px 0px 35px;
+    }
+    .projects-caption{
+        font-size: 12px;
+    }
+    #projects .projects-sub-caption{
+        font-size: 8px;
+    }
+
+    #hobbies{
+        width: 100%;
+        height: 44%;
+        border-right: 0px solid #ecf0f1;
+    }
+    #world-map{
+        width: 100%;
+        height: 56%;
+    }
+    #hobbies .content{
+        max-width: 100%;
+        max-height: 100%;
+        margin: 20px 0px 0px 80px;
+    }
+        #global-icon-hobbies
+        {
+            font-size: 14px;
+        }
+        #hobbies .caption-hobbies{
+            margin-left: -5%;
+            font-size: 16px;
+        }
+        .hobbies-icon{
+            font-size: 17px;
+        }
+        #chart-world-map{
+            width: 270px;
+            height: 200px;
+            margin-left: 70px;
+        }
+    #table-footer{
+        font-size: 11px;
+    }
+    #table-footer tr td{
+        margin: 10px 10px 4px 0px;
+        padding: 5px 0px 0px 0px;
+    }
+    #footer-right-content{
+        font-size: 11px;
+        margin-top: 13%;
+    }
+    #trungquandev_footer .content-right img{
+        width:13px;
+        height:13px;
+        margin-top: -3px;
+        border-radius: 45%;
+    }
+}

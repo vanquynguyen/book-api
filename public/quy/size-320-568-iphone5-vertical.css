@@ -1,0 +1,145 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Iphone 5 dọc(320 x 568)*/
+@media screen and (max-width: 320px){
+    #trungquandev_wraper{
+        max-width: 95%;
+        height: 2400px;
+    }
+    .content-item-personal-contact{
+        width: 100%;
+        height: 22%;
+    }
+    .content-item-skills{
+        width: 100%;
+        height: 32%;
+    }
+    .content-item-projects{
+        width: 100%;
+        height: 27%;
+    }
+    .content-item-hobbies-world-map{
+        width: 100%;
+        height: 19%;
+    }
+    #trungquandev_table_header{
+        width: 78%;
+    }
+    #trungquandev_table_header caption{
+        font-size: 9px;
+        font-style: normal;
+    }
+    #trungquandev_header .right p{
+        margin: 35px 0px 0px 29px;
+    }
+    #trungquandev_header .right p a{
+        font-size: 18px;
+    }
+    #trungquandev_table_header img{
+        margin: 2px 0px 2px 3.5px;
+    }
+    /*#trungquandev_header .left hr{
+        width:200px;
+        margin: 75px 0px 0px 13px;
+        display: none;
+    }*/
+    #skills .content-tech-skills{
+        width: 100%;
+        height: 50%;
+        float: left;
+        position: relative;
+    }
+    #skills .content-other-skills{
+        width: 100%;
+        height: 50%;
+        margin-top: 100%;
+        float: left;
+    }
+    #skills .caption-tech{
+        margin-left: 34%;
+        font-size: 16px;
+    }
+    #skills .sub-caption-tech{
+        margin-left: 7%;
+        font-size: 9px;
+    }
+    #skills .caption-other{
+        margin-left: 36%;
+        font-size: 16px;
+    }
+    #skills .sub-caption-other{
+        margin-left: 4%;
+        font-size: 9px;
+    }
+    #chart-skills{
+        width: 285px;
+        height: 300px;
+        margin-left: 1%;
+    }
+    #trungquandev_footer .content-left{
+        width: 55%;
+    }
+    #trungquandev_footer .content-right{
+        width: 45%;
+    }
+    #table-other-skills{
+        margin-top: -6%;
+    }
+    #projects .content .project-item{
+        width: 115px;
+        max-height:115px;
+        margin: 62px 0px 0px 15px;
+    }
+    .projects-caption{
+        font-size: 11px;
+    }
+    #projects .projects-sub-caption{
+        font-size: 8px;
+    }
+    #hobbies{
+        width: 100%;
+        height: 44%;
+        border-right: 0px solid #ecf0f1;
+    }
+    #world-map{
+        width: 100%;
+        height: 56%;
+    }
+    #hobbies .content{
+        max-width: 100%;
+        max-height: 100%;
+        margin: 20px 0px 0px 60px;
+    }
+        #global-icon-hobbies
+        {
+            font-size: 12px;
+        }
+        #hobbies .caption-hobbies{
+            margin-left: -6%;
+            font-size: 14px;
+        }
+        .hobbies-icon{
+            font-size: 15px;
+        }
+        #chart-world-map{
+            width: 250px;
+            height: 190px;
+            /*border:1px solid black;*/
+        }
+        #table-footer tr td{
+            margin: 6px 10px 4px 0px;
+            padding: 2px 0px 0px 0px;
+        }
+        #footer-right-content{
+            font-size: 11px;
+            margin-top: 20%;
+        }
+    }
+
+/*Iphone 4 dọc(320 x 480)*/
+/*@media screen and (max-width: 320px){
+    Như Iphone 5 dọc ở trên
+}
+*/

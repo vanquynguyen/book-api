@@ -1,0 +1,101 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Iphone 7 plus ngang(736 x 414)*/
+@media screen and (max-width: 736px){
+    #topBtn {
+        bottom: 15px;
+        right: 15px;
+        padding: 1px 5px 1px 5px;
+        font-size: 18px;
+    }
+    #topBtn:hover {
+        border-radius: 4px;
+    }
+    #trungquandev_table_header caption{
+        font-size: 9px;
+    }
+    #trungquandev_table_header img{
+        margin: 5px 0px 5px 6px;
+    }
+    #trungquandev_header .left hr{
+        margin: 150px 0px 0px 50px;
+    }
+    #trungquandev_header .right p{
+        margin: 72px 0px 0px 35px;
+    }
+    #trungquandev_header .right p a{
+        font-size: 25px;
+    }
+    #trungquandev_header .right p span{
+        font-size: 9px;
+    }
+    #table-personal tr td.left{
+        width: 30%;
+    }
+    #table-personal tr td.right{
+        width: 60%;
+    }
+    #skills .caption-tech{
+        margin-left: 38%;
+    }
+    #skills .sub-caption-tech{
+        margin-left: 6%;
+        font-size: 11px;
+    }
+    #skills .sub-caption-other{
+        margin-left: 4%;
+        font-size: 11px;
+    }
+    #chart-skills{
+        width: 360px;
+        height: 350px;
+        margin-left: 0%;
+    }
+    #projects .content .project-item{
+        width: 250px;
+        max-height:250px;
+        margin: 42px 0px 0px 38px;
+    }
+    #global-icon-hobbies
+    {
+        font-size: 15px;
+    }
+    #hobbies .caption-hobbies{
+        margin-left: -5%;
+        font-size: 16px;
+    }
+    #table-hobbies{
+        width: 85%;
+        margin-left: 12%;
+    }
+    #table-hobbies tr td.first{
+        margin: 5px 10px 4px 0px;
+        padding: 7px 0px 0px 10px;
+    }
+    #table-hobbies tr td.second{
+        margin: 5px 10px 4px 0px;
+        padding: 7px 0px 0px 10px;
+    }
+    #table-hobbies tr td.third{
+        margin: 5px 10px 4px 0px;
+        padding: 7px 0px 0px 10px;
+    }
+    #chart-world-map{
+        width: 340px;
+        height: 220px;
+    }
+    #table-footer tr td{
+        padding: 17px 0px 0px 3px;
+    }
+    #footer-right-content{
+        margin-top: 8%;
+    }
+    #trungquandev_footer .content-right img{
+        width:18px;
+        height:18px;
+        margin-top: -4px;
+    }
+}
+

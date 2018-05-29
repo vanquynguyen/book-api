@@ -1,0 +1,70 @@
+/*Author:
+    Đỗ Trung Quân
+    https://trungquandev.com/
+*/
+/*Ipad dọc(768 x 1024)*/
+@media screen and (max-width: 768px){
+    #topBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 2px 5px 2px 5px;
+        font-size: 18px;
+    }
+    #topBtn:hover {
+        border-radius: 4px;
+    }
+    #trungquandev_wraper{
+        max-width: 95%;
+        height: 2500px;
+    }
+    #trungquandev_header{
+        height: 13%;
+    }
+    #trungquandev_content{
+        height: 84%;
+    }
+    #trungquandev_footer{
+        height: 3%;
+    }
+    .content-item-personal-contact{
+        height: 15%;
+    }
+    .content-item-skills{
+        height: 24%;
+    }
+    .content-item-projects{
+        height: 46%;
+    }
+    .content-item-hobbies-world-map{
+        height: 15%;
+    }
+    #trungquandev_table_header img{
+        margin: 5px 0px 5px 6px;
+    }
+    #trungquandev_header .left hr{
+        margin: 150px 0px 0px 55px;
+    }
+    #trungquandev_header .right p{
+        margin: 72px 0px 0px 33px;
+    }
+    #trungquandev_header .right p a{
+        font-size: 25px;
+    }
+    #trungquandev_header .right p span{
+        font-size: 10px;
+    }
+    #table-personal tr td.left{
+        width: 29%;
+    }
+    #table-personal tr td.right{
+        width: 64%;
+    }
+    #skills .sub-caption-tech{
+        margin-left: 10%;
+    }
+    #projects .content .project-item{
+        width: 250px;
+        max-height:250px;
+        margin: 50px 0px 0px 48px;
+    }
+}

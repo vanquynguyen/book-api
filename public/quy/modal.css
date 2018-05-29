@@ -1,0 +1,139 @@
+/*Author:
+  Đỗ Trung Quân
+  https://trungquandev.com/
+*/
+
+.popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.popup {
+  text-align: center;
+}
+
+.popup:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  margin-right: -4px;
+  vertical-align: middle;
+}
+
+.popup-inner {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  padding: 40px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 1);
+  border-radius: 3px;
+  background: #fff;
+  text-align: center;
+}
+
+.popup-inner h1 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+}
+
+.popup-inner p {
+  width: 75px;
+  height: 30px;
+  font-size: 24px;
+  font-weight: 400;
+  float: left;
+  margin: 0 auto;
+}
+
+.popup-description {
+  width: 80% !important;
+  height: auto !important;
+  font-size: 14px !important;
+  text-align: left !important;
+  margin-left: 10% !important;
+  margin-bottom: 1% !important;
+}
+
+.text-center {
+    display: inherit;
+}
+
+.btnq-save {
+    width: 70px;
+    height: 34px;
+    background: #2ABB9B;
+    border: #2ABB9B;
+}
+
+.btnq-save:hover {
+    background: #16A085;
+    border: #16A085;
+}
+
+.btnq-close {
+  width: 70px;
+  height: 34px;
+}
+
+.popup-inner select {
+  width: 90%;
+  font-weight: bold;
+  margin: 0 auto;
+  color: #1BA39C;
+  border: 1px solid #A2DED0;
+}
+
+.popup-close {
+  width: 30px;
+  height: 30px;
+  padding-top: 4px;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  -webkit-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  border-radius: 100%;
+  background: transparent;
+  border: solid 3px #1BA39C;
+}
+
+.popup-close:after,
+.popup-close:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 5.5px;
+  height: 4px;
+  width: 13px;
+  border-radius: 30px;
+  background: #1BA39C;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.popup-close:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.popup-close:hover {
+  -webkit-transform: translate(50%, -50%) rotate(180deg);
+  transform: translate(50%, -50%) rotate(180deg);
+  background: #f00;
+  text-decoration: none;
+  border-color: #f00;
+}
+
+.popup-close:hover:after,
+.popup-close:hover:before {
+  background: #fff;
+}
