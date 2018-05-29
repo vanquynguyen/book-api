@@ -46,7 +46,7 @@
                 </div>
                 <div class="right">
                     <p>
-                        <a >Quy Nguyen - Green Cat</a><br>
+                        <a >Quy Nguyen - Small Turtle</a><br>
                         <span>Welcome to visit my CV Online !</span><br>
                         <span>"A little bit of fragrance always clings to the hands that gives you roses !"</span>
                     </p>
@@ -278,7 +278,7 @@
                                                         <path d="M394.1741930610666,199.92577867644584L418.0635132057201,210.2422097808275L423.0635132057201,210.2422097808275" fill="none" stroke="#16a085" stroke-linecap="round" stroke-width="0.5" stroke-opacity="0.75" style="fill: none; stroke: rgb(22, 160, 133); stroke-linecap: round; stroke-opacity: 0.75;"></path>
                                                         <path d="M379.3977799656024,101.89068336623119L400.0537493235023,82.17448133400443L405.0537493235023,82.17448133400443" fill="none" stroke="#16a085" stroke-linecap="round" stroke-width="0.5" stroke-opacity="0.75" style="fill: none; stroke: rgb(22, 160, 133); stroke-linecap: round; stroke-opacity: 0.75;"></path>
                                                         <text fill-opacity="1" fill="#333333" transform="matrix(1,0,0,1,0,0)" text-anchor="end" x="172.9225268476967" y="64.73421888769028" stroke="none" style="fill-opacity: 1; fill: rgb(51, 51, 51); text-anchor: end; stroke: none;">
-                                                            <tspan dy="3.5154688876902753" x="172.9225268476967">Wordpress</tspan>
+                                                            <tspan dy="3.5154688876902753" x="172.9225268476967">Reactjs</tspan>
                                                         </text>
                                                         <text fill-opacity="1" fill="#333333" transform="matrix(1,0,0,1,0,0)" text-anchor="end" x="137.30530744815084" y="188.494558226794" stroke="none" style="fill-opacity: 1; fill: rgb(51, 51, 51); text-anchor: end; stroke: none;">
                                                             <tspan dy="3.5101832267939983" x="137.30530744815084">Laravel</tspan>
@@ -313,7 +313,7 @@
                                                         <path d="M13.5,11.5L13.5,7.55A3.95,3.95,0,0,1,17.45,11.5ZM11.5,13.5L11.5,8.55A4.95,4.95,0,1,0,16.45,13.5Z" fill="#26b99a" stroke="#c9eee6" stroke-linecap="round" stroke-width="0.5" stroke-opacity="0" style="fill: rgb(38, 185, 154); stroke: rgb(201, 238, 230); stroke-linecap: round; stroke-opacity: 0; cursor: pointer;"></path>
                                                         <rect x="4" y="4" width="74" height="34" rx="0" ry="0" fill="#ff0000" stroke="none" fill-opacity="0.000001" stroke-width="1" style="fill: rgb(255, 0, 0); stroke: none; fill-opacity: 1e-06; cursor: pointer;"></rect>
                                                         <text fill-opacity="1" fill="#666666" text-anchor="start" x="111" y="6.5" stroke="none" style="fill-opacity: 1; fill: rgb(102, 102, 102); text-anchor: start; cursor: pointer; stroke: none;">
-                                                            <tspan dy="9.5" x="111">Wordpress</tspan>
+                                                            <tspan dy="9.5" x="111">Reactjs</tspan>
                                                         </text>
                                                         <path d="M101.5,11.5L101.5,7.55A3.95,3.95,0,0,1,105.45,11.5ZM99.5,13.5L99.5,8.55A4.95,4.95,0,1,0,104.45,13.5Z" fill="#34495e" stroke="#cdd2d7" stroke-linecap="round" stroke-width="0.5" stroke-opacity="0" style="fill: rgb(52, 73, 94); stroke: rgb(205, 210, 215); stroke-linecap: round; stroke-opacity: 0; cursor: pointer;"></path>
                                                         <rect x="92" y="4" width="70" height="17" rx="0" ry="0" fill="#ff0000" stroke="none" fill-opacity="0.000001" stroke-width="1" style="fill: rgb(255, 0, 0); stroke: none; fill-opacity: 1e-06; cursor: pointer;"></rect>
@@ -449,111 +449,6 @@
                     </div>
                 </div>
             </div>
-            <div class="content-item-hobbies-world-map">
-                <div id="hobbies">
-                    <div class="title">
-                        <a href="javascript:void(0)">Interests &nbsp;</a>
-                    </div>
-                    <div class="content">
-                        <span class="caption-hobbies">
-                        <i class="fa fa-globe" id="global-icon-hobbies"></i>
-                        Did you find your life purpose?
-                        </span>
-                        <br>
-                        <table id="table-hobbies">
-                            <tbody>
-                                <tr>
-                                    <td class="first">
-                                        <i title="Family" aria-hidden="true" class="fa fa-home hobbies-icon"></i>
-                                    </td>
-                                    <td class="second">
-                                        <i title="Coffee" aria-hidden="true" class="fa fa-coffee hobbies-icon"></i>
-                                    </td>
-                                    <td class="third">
-                                        <i title="Read Books" aria-hidden="true" class="fa fa-book hobbies-icon"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="first">
-                                        <i title="Write Every Interest" aria-hidden="true" class="fa fa-pencil-square-o hobbies-icon"></i>
-                                    </td>
-                                    <td class="second">
-                                        <i title="Travel" aria-hidden="true" class="fa fa-plane hobbies-icon"></i>
-                                    </td>
-                                    <td class="third">
-                                        <i title="Take Photos" aria-hidden="true" class="fa fa-camera-retro hobbies-icon"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="first">
-                                        <i title="Music is Spices of Life" aria-hidden="true" class="fa fa-music hobbies-icon"></i>
-                                    </td>
-                                    <td class="second">
-                                        <i title="Movies Like Music Too" aria-hidden="true" class="fa fa-film hobbies-icon"></i>
-                                    </td>
-                                    <td class="third">
-                                        <i title="Play Games" aria-hidden="true" class="fa fa-gamepad hobbies-icon"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div id="world-map">
-                    <div class="title">
-                        <a href="javascript:void(0)">
-                        Our Planet &nbsp;
-                        </a>
-                    </div>
-                    <div class="content">
-                        <!-- Code chart -->
-                        <div id="chart-world-map" _echarts_instance_="ec_1527580381512" style="-webkit-tap-highlight-color: transparent; user-select: none; background-color: transparent;">
-                            <div style="position: relative; overflow: hidden; width: 600px; height: 300px;">
-                                <canvas width="600" height="300" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="quy_footer">
-            <div class="content-left">
-                <table id="table-footer">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="" target="__blank">
-                                Blog
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" target="__blank">
-                                Instagram
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" target="__blank">
-                                Google+
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" target="__blank">
-                                Twitter
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" target="__blank">
-                                PDF Version
-                                </a>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- VI-ENG - TQĐ - Social Icon - Note - Dowload Pdf - Total Views -->
-        </div>
         </div>
         <button id="topBtn" title="Go to top" style="display: none;">
         <i class="fa fa-angle-up"></i>

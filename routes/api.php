@@ -46,7 +46,7 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::post('/user/check-follow', 'FollowController@checkFollow');
     Route::get('/user/{id}/follower', 'FollowController@getFollowers');
     Route::get('/user/{id}/following', 'FollowController@getFollowings');
-    // Route::resource('books', 'BookController', ['except' => ['create', 'edit']]);
+    Route::get('book/search', 'BookController@search');
     Route::get('book/filter', 'BookController@bookFilter');
 });
 

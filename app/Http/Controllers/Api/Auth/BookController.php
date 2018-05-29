@@ -110,7 +110,9 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         try {
+            var_dump($request->all());
             $books = $request->all();
+            $filename = helper::upload($request->file('image'), config('settings.bookPath'));
             $books = $this->bookRepository->update($books, $id);
 
             return response()->json($books);
@@ -142,7 +144,9 @@ class BookController extends Controller
 
     public function search(Request $request) {
         $keywork = Input::get('keywork');
-        $books = $this->bookRepository->search($keywork);
+        if($keywork !== '') {
+            $books = $this->bookRepository->search($keywork);
+        }
 
         return response()->json($books);
     }
