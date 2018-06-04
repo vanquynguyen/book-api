@@ -122,15 +122,34 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-            $users = $request->all();
-            $users = $this->userRepository->update($users, $id);
+        $validation = Validator::make($request->all(),[ 
+            'email' => 'required|email',
+        ]);
+        
+        if($validation->fails()){
+            $response['status'] = $validation->errors();
+            $response = [
+                'status' => 403, 
+                'success'=>false
+            ];
+            return response()->json($response['status']);
+           
+        }  else {
+            try {
+                $users = User::find($id);
+                $users->full_name =  $request->full_name;
+                $users->email = $request->email;
+                $users->address = $request->address;
+                $users->gender = $request->gender;
 
-            return response()->json($users);
-        } catch (Exception $e) {
-            $response['error'] = true;
+                $users = $users->save();
 
-            return response()->json($response);
+                return response()->json($users);
+            } catch (Exception $e) {
+                $response['error'] = true;
+
+                return response()->json($response);
+            }
         }
     }
 
