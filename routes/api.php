@@ -50,6 +50,7 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::get('book/filter', 'BookController@bookFilter');
     Route::post('user/{id}/avatar', 'UserController@changeAvatar');
     Route::post('user/{id}/edit', 'UserController@update');
+    Route::post('book/{id}/edit', 'BookController@update');
 });
 
 Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'middleware' => 'jwt.auth', 'as' => 'api.'], function () {
