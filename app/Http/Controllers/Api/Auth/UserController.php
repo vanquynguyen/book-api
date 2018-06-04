@@ -142,27 +142,20 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            $users = $this->userRepository->destroy($id);
-  
-            return response()->json($users);
-        } catch (Exception $e) {
-            $response['error'] = true;
-
-            return response()->json($response);
-        }
+        //
     }
 
-    public function approve($id)
+    public function changeAvatar(Request $request, $id)
     {
-        $users = [
-            'status' => config('settings.status.approved')
-        ];
-
-        $users = $this->userRepository->update($users, $id);
-        $users = $this->userRepository->getAll();
-
-        return response()->json($users);
+        $user = User::findOrFail($id);
+        try {
+            $filename = helper::upload($request->file('avatar'), config('settings.defaultPath'));
+            $user->avatar = $filename;
+            $user->save();
+        } catch (Exception $e) {
+            echo $e->get_message();
+        }
+        return response()->json($user);
     }
 
     public function search(Request $request) {

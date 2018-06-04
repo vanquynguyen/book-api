@@ -48,6 +48,7 @@ Route::group(['prefix' => '/auth','middleware' => 'api', 'namespace' => 'Api\Aut
     Route::get('/user/{id}/following', 'FollowController@getFollowings');
     Route::get('book/search', 'BookController@search');
     Route::get('book/filter', 'BookController@bookFilter');
+    Route::post('user/{id}/avatar', 'UserController@changeAvatar');
 });
 
 Route::group(['prefix' => '/auth', 'namespace' => 'Api\Auth', 'middleware' => 'jwt.auth', 'as' => 'api.'], function () {
