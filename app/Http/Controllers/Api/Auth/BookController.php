@@ -125,7 +125,6 @@ class BookController extends Controller
             $book->amount = $request->amount;
 
             $book->save();
-            // $books = $this->bookRepository->update($books, $id);
 
             return response()->json($book);
         } catch (Exception $e) {
