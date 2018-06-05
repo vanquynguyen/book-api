@@ -52,12 +52,17 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $book = Book::find($request->bookId);
+        if ($book->sale !== '' && $book->sale > 0) {
+            $price = $book->price*$book->sale/100;
+        } else {
+            $price = $book->price;
+        }
         $carts = [
             'user_id' => $request->userId,
             'book_id' => $request->bookId,
             'title' => $book->title,
             'image' => $book->image,
-            'price' => $book->price,
+            'price' => $price,
             'amount' => 1,
             'status' => 1
 
