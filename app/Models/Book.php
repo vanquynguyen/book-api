@@ -14,6 +14,7 @@ class Book extends Model
         'description',
         'author',
         'price',
+        'sale',
         'amount',
         'status',
         'rate_average',

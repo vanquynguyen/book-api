@@ -62,6 +62,7 @@ class BookController extends Controller
                 'description' => $request->description,
                 'author' => $request->author,
                 'price' => $request->price,
+                'sale' => $request->sale,
                 'amount' => $request->amount,
                 'status' => config('settings.status.inprogress'),
             ];
@@ -120,6 +121,7 @@ class BookController extends Controller
             $book->description = $request->description;
             $book->author = $request->author;
             $book->price = $request->price;
+            $book->sale = $request->sale;
             $book->amount = $request->amount;
 
             $book->save();
