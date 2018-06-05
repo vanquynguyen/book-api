@@ -110,11 +110,24 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $books = $request->all();
-            $filename = helper::upload($request->file('image'), config('settings.bookPath'));
-            $books = $this->bookRepository->update($books, $id);
+            $book = Book::find($id);
+            if ($request->has('file')) {
+                $filename = helper::upload($request->file('image'), config('settings.bookPath'));
+                $book->image = $filename;
+            }
+           
+            $book->user_id = $request->user_id;
+            $book->category_id = $request->category_id;
+            $book->title = $request->title;
+            $book->description = $request->description;
+            $book->author = $request->author;
+            $book->price = $request->price;
+            $book->amount = $request->amount;
 
-            return response()->json($books);
+            $book->save();
+            // $books = $this->bookRepository->update($books, $id);
+
+            return response()->json($book);
         } catch (Exception $e) {
             $response['error'] = true;
 
