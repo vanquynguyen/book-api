@@ -111,10 +111,8 @@ class BookController extends Controller
     {
         try {
             $book = Book::find($id);
-            if ($request->has('file')) {
-                $filename = helper::upload($request->file('image'), config('settings.bookPath'));
-                $book->image = $filename;
-            }
+            $filename = helper::upload($request->file('image'), config('settings.bookPath'));
+            $book->image = $filename;
            
             $book->user_id = $request->user_id;
             $book->category_id = $request->category_id;
